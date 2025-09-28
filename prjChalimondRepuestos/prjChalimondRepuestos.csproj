@@ -6,6 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>vintage-car-silhouette-of-side-view_icon-icons.com_70578.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="vintage-car-silhouette-of-side-view_icon-icons.com_70578.ico" />
+  </ItemGroup>
 
 </Project>

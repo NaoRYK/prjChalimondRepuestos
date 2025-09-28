@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepuestos));
             lstMarcas_carga = new ComboBox();
             lstOrigen_carga = new ComboBox();
             numRepuesto_carga = new NumericUpDown();
@@ -41,15 +42,14 @@
             lblOrigen = new Label();
             lblMarca = new Label();
             groupBox2 = new GroupBox();
-            lastFiltrar_consulta = new ComboBox();
-            lblFiltrar_consulta = new Label();
+            lblRepuestosFitlrados = new Label();
+            lstRepuestos_consulta = new ListBox();
             lblOrigen_consulta = new Label();
             lblMarca_consulta = new Label();
             optImporta_consulta = new RadioButton();
             optNacional_consulta = new RadioButton();
             btnConsulta = new Button();
             lstMarca_consulta = new ComboBox();
-            lastRepuestos_consulta = new ListBox();
             ((System.ComponentModel.ISupportInitialize)numRepuesto_carga).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrecio_carga).BeginInit();
             groupBox1.SuspendLayout();
@@ -114,7 +114,7 @@
             groupBox1.Controls.Add(lstMarcas_carga);
             groupBox1.Location = new Point(28, 18);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(363, 247);
+            groupBox1.Size = new Size(363, 257);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Ingresar datos";
@@ -150,10 +150,11 @@
             // 
             btnCarga.Location = new Point(28, 218);
             btnCarga.Name = "btnCarga";
-            btnCarga.Size = new Size(320, 23);
+            btnCarga.Size = new Size(320, 29);
             btnCarga.TabIndex = 5;
             btnCarga.Text = "Cargar";
             btnCarga.UseVisualStyleBackColor = true;
+            btnCarga.Click += btnCarga_Click;
             // 
             // lblOrigen
             // 
@@ -175,9 +176,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(lastRepuestos_consulta);
-            groupBox2.Controls.Add(lastFiltrar_consulta);
-            groupBox2.Controls.Add(lblFiltrar_consulta);
+            groupBox2.Controls.Add(lblRepuestosFitlrados);
+            groupBox2.Controls.Add(lstRepuestos_consulta);
             groupBox2.Controls.Add(lblOrigen_consulta);
             groupBox2.Controls.Add(lblMarca_consulta);
             groupBox2.Controls.Add(optImporta_consulta);
@@ -186,32 +186,33 @@
             groupBox2.Controls.Add(lstMarca_consulta);
             groupBox2.Location = new Point(397, 18);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(376, 247);
+            groupBox2.Size = new Size(376, 257);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Consultar datos";
             // 
-            // lastFiltrar_consulta
+            // lblRepuestosFitlrados
             // 
-            lastFiltrar_consulta.FormattingEnabled = true;
-            lastFiltrar_consulta.Location = new Point(19, 144);
-            lastFiltrar_consulta.Name = "lastFiltrar_consulta";
-            lastFiltrar_consulta.Size = new Size(150, 23);
-            lastFiltrar_consulta.TabIndex = 14;
+            lblRepuestosFitlrados.AutoSize = true;
+            lblRepuestosFitlrados.Location = new Point(175, 19);
+            lblRepuestosFitlrados.Name = "lblRepuestosFitlrados";
+            lblRepuestosFitlrados.Size = new Size(107, 15);
+            lblRepuestosFitlrados.TabIndex = 16;
+            lblRepuestosFitlrados.Text = "Repuestos filtrados";
             // 
-            // lblFiltrar_consulta
+            // lstRepuestos_consulta
             // 
-            lblFiltrar_consulta.AutoSize = true;
-            lblFiltrar_consulta.Location = new Point(19, 126);
-            lblFiltrar_consulta.Name = "lblFiltrar_consulta";
-            lblFiltrar_consulta.Size = new Size(58, 15);
-            lblFiltrar_consulta.TabIndex = 13;
-            lblFiltrar_consulta.Text = "Filtrar por";
+            lstRepuestos_consulta.FormattingEnabled = true;
+            lstRepuestos_consulta.ItemHeight = 15;
+            lstRepuestos_consulta.Location = new Point(175, 37);
+            lstRepuestos_consulta.Name = "lstRepuestos_consulta";
+            lstRepuestos_consulta.Size = new Size(185, 199);
+            lstRepuestos_consulta.TabIndex = 15;
             // 
             // lblOrigen_consulta
             // 
             lblOrigen_consulta.AutoSize = true;
-            lblOrigen_consulta.Location = new Point(19, 68);
+            lblOrigen_consulta.Location = new Point(16, 79);
             lblOrigen_consulta.Name = "lblOrigen_consulta";
             lblOrigen_consulta.Size = new Size(43, 15);
             lblOrigen_consulta.TabIndex = 12;
@@ -229,7 +230,7 @@
             // optImporta_consulta
             // 
             optImporta_consulta.AutoSize = true;
-            optImporta_consulta.Location = new Point(19, 104);
+            optImporta_consulta.Location = new Point(19, 131);
             optImporta_consulta.Name = "optImporta_consulta";
             optImporta_consulta.Size = new Size(81, 19);
             optImporta_consulta.TabIndex = 8;
@@ -240,7 +241,7 @@
             // optNacional_consulta
             // 
             optNacional_consulta.AutoSize = true;
-            optNacional_consulta.Location = new Point(19, 86);
+            optNacional_consulta.Location = new Point(19, 106);
             optNacional_consulta.Name = "optNacional_consulta";
             optNacional_consulta.Size = new Size(72, 19);
             optNacional_consulta.TabIndex = 7;
@@ -256,6 +257,7 @@
             btnConsulta.TabIndex = 6;
             btnConsulta.Text = "Consultar";
             btnConsulta.UseVisualStyleBackColor = true;
+            btnConsulta.Click += btnConsulta_Click;
             // 
             // lstMarca_consulta
             // 
@@ -266,15 +268,6 @@
             lstMarca_consulta.Size = new Size(150, 23);
             lstMarca_consulta.TabIndex = 5;
             // 
-            // lastRepuestos_consulta
-            // 
-            lastRepuestos_consulta.FormattingEnabled = true;
-            lastRepuestos_consulta.ItemHeight = 15;
-            lastRepuestos_consulta.Location = new Point(175, 37);
-            lastRepuestos_consulta.Name = "lastRepuestos_consulta";
-            lastRepuestos_consulta.Size = new Size(185, 199);
-            lastRepuestos_consulta.TabIndex = 15;
-            // 
             // frmRepuestos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -282,8 +275,12 @@
             ClientSize = new Size(800, 279);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmRepuestos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion de repuestos";
+            Load += frmRepuestos_Load;
             ((System.ComponentModel.ISupportInitialize)numRepuesto_carga).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPrecio_carga).EndInit();
             groupBox1.ResumeLayout(false);
@@ -315,9 +312,8 @@
         private Label lblMarca;
         private Label lblDescripcion;
         private Label lblMarca_consulta;
-        private Label lblFiltrar_consulta;
         private Label lblOrigen_consulta;
-        private ComboBox lastFiltrar_consulta;
-        private ListBox lastRepuestos_consulta;
+        private ListBox lstRepuestos_consulta;
+        private Label lblRepuestosFitlrados;
     }
 }
