@@ -1,8 +1,8 @@
 namespace prjChalimondRepuestos
 {
-    public partial class Form1 : Form
+    public partial class frmRepuestos : Form
     {
-        public Form1()
+        public frmRepuestos()
         {
             InitializeComponent();
         }
