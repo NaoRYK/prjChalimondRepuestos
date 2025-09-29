@@ -34,14 +34,14 @@
             numRepuesto_carga = new NumericUpDown();
             txtDesc_carga = new RichTextBox();
             numPrecio_carga = new NumericUpDown();
-            groupBox1 = new GroupBox();
+            mrcCarga = new GroupBox();
             lblDescripcion = new Label();
             lblPrecio = new Label();
             lblRepuesto = new Label();
             btnCarga = new Button();
             lblOrigen = new Label();
             lblMarca = new Label();
-            groupBox2 = new GroupBox();
+            mrcConsulta = new GroupBox();
             lblRepuestosFitlrados = new Label();
             lstRepuestos_consulta = new ListBox();
             lblOrigen_consulta = new Label();
@@ -52,8 +52,8 @@
             lstMarca_consulta = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numRepuesto_carga).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrecio_carga).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            mrcCarga.SuspendLayout();
+            mrcConsulta.SuspendLayout();
             SuspendLayout();
             // 
             // lstMarcas_carga
@@ -99,25 +99,25 @@
             numPrecio_carga.Size = new Size(150, 23);
             numPrecio_carga.TabIndex = 4;
             // 
-            // groupBox1
+            // mrcCarga
             // 
-            groupBox1.Controls.Add(lblDescripcion);
-            groupBox1.Controls.Add(lblPrecio);
-            groupBox1.Controls.Add(lblRepuesto);
-            groupBox1.Controls.Add(btnCarga);
-            groupBox1.Controls.Add(lblOrigen);
-            groupBox1.Controls.Add(lblMarca);
-            groupBox1.Controls.Add(numPrecio_carga);
-            groupBox1.Controls.Add(txtDesc_carga);
-            groupBox1.Controls.Add(numRepuesto_carga);
-            groupBox1.Controls.Add(lstOrigen_carga);
-            groupBox1.Controls.Add(lstMarcas_carga);
-            groupBox1.Location = new Point(28, 18);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(363, 257);
-            groupBox1.TabIndex = 5;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Ingresar datos";
+            mrcCarga.Controls.Add(lblDescripcion);
+            mrcCarga.Controls.Add(lblPrecio);
+            mrcCarga.Controls.Add(lblRepuesto);
+            mrcCarga.Controls.Add(btnCarga);
+            mrcCarga.Controls.Add(lblOrigen);
+            mrcCarga.Controls.Add(lblMarca);
+            mrcCarga.Controls.Add(numPrecio_carga);
+            mrcCarga.Controls.Add(txtDesc_carga);
+            mrcCarga.Controls.Add(numRepuesto_carga);
+            mrcCarga.Controls.Add(lstOrigen_carga);
+            mrcCarga.Controls.Add(lstMarcas_carga);
+            mrcCarga.Location = new Point(28, 18);
+            mrcCarga.Name = "mrcCarga";
+            mrcCarga.Size = new Size(363, 257);
+            mrcCarga.TabIndex = 5;
+            mrcCarga.TabStop = false;
+            mrcCarga.Text = "Ingresar datos";
             // 
             // lblDescripcion
             // 
@@ -174,22 +174,22 @@
             lblMarca.TabIndex = 6;
             lblMarca.Text = "Marca";
             // 
-            // groupBox2
+            // mrcConsulta
             // 
-            groupBox2.Controls.Add(lblRepuestosFitlrados);
-            groupBox2.Controls.Add(lstRepuestos_consulta);
-            groupBox2.Controls.Add(lblOrigen_consulta);
-            groupBox2.Controls.Add(lblMarca_consulta);
-            groupBox2.Controls.Add(optImporta_consulta);
-            groupBox2.Controls.Add(optNacional_consulta);
-            groupBox2.Controls.Add(btnConsulta);
-            groupBox2.Controls.Add(lstMarca_consulta);
-            groupBox2.Location = new Point(397, 18);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(376, 257);
-            groupBox2.TabIndex = 6;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Consultar datos";
+            mrcConsulta.Controls.Add(lblRepuestosFitlrados);
+            mrcConsulta.Controls.Add(lstRepuestos_consulta);
+            mrcConsulta.Controls.Add(lblOrigen_consulta);
+            mrcConsulta.Controls.Add(lblMarca_consulta);
+            mrcConsulta.Controls.Add(optImporta_consulta);
+            mrcConsulta.Controls.Add(optNacional_consulta);
+            mrcConsulta.Controls.Add(btnConsulta);
+            mrcConsulta.Controls.Add(lstMarca_consulta);
+            mrcConsulta.Location = new Point(397, 18);
+            mrcConsulta.Name = "mrcConsulta";
+            mrcConsulta.Size = new Size(376, 257);
+            mrcConsulta.TabIndex = 6;
+            mrcConsulta.TabStop = false;
+            mrcConsulta.Text = "Consultar datos";
             // 
             // lblRepuestosFitlrados
             // 
@@ -273,8 +273,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 279);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(mrcConsulta);
+            Controls.Add(mrcCarga);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmRepuestos";
@@ -283,10 +283,10 @@
             Load += frmRepuestos_Load;
             ((System.ComponentModel.ISupportInitialize)numRepuesto_carga).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPrecio_carga).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            mrcCarga.ResumeLayout(false);
+            mrcCarga.PerformLayout();
+            mrcConsulta.ResumeLayout(false);
+            mrcConsulta.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -297,9 +297,9 @@
         private NumericUpDown numRepuesto_carga;
         private RichTextBox txtDesc_carga;
         private NumericUpDown numPrecio_carga;
-        private GroupBox groupBox1;
+        private GroupBox mrcCarga;
         private Button btnCarga;
-        private GroupBox groupBox2;
+        private GroupBox mrcConsulta;
         private ListBox listBox1;
         private TextBox textBox1;
         private RadioButton optImporta_consulta;
