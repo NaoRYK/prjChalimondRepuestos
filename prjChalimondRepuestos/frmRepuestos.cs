@@ -63,15 +63,9 @@ namespace prjChalimondRepuestos
             repuestos[contadorRepuestos] = repuesto;
             contadorRepuestos++;
 
-            MessageBox.Show("Repuesto cargado exitosamente.");
+            MessageBox.Show("Repuesto cargado exitosamente.", "Operacion exitosa");
 
-            lstMarcas_carga.SelectedIndex = -1;
-            lstOrigen_carga.SelectedIndex = -1;
-            txtDesc_carga.Clear();
-            numRepuesto_carga.Value = 0;
-            numPrecio_carga.Value = 0;
-
-            lstMarcas_carga.Focus();
+            Limpiar();
         }
 
 
@@ -127,6 +121,7 @@ namespace prjChalimondRepuestos
 
         private void ConsultarRepuesto()
         {
+            
             lstRepuestos_consulta.Items.Clear();
 
 
@@ -164,5 +159,23 @@ namespace prjChalimondRepuestos
         }
 
 
+        private void Limpiar()
+        {
+
+            lstMarcas_carga.SelectedIndex = -1;
+            lstOrigen_carga.SelectedIndex = -1;
+            txtDesc_carga.Clear();
+            numRepuesto_carga.Value = 0;
+            numPrecio_carga.Value = 0;
+
+            lstMarcas_carga.Focus();
+            lstRepuestos_consulta.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            
+        }
     }
 }

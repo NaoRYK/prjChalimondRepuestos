@@ -35,6 +35,7 @@
             txtDesc_carga = new RichTextBox();
             numPrecio_carga = new NumericUpDown();
             mrcCarga = new GroupBox();
+            btnCancelar = new Button();
             lblDescripcion = new Label();
             lblPrecio = new Label();
             lblRepuesto = new Label();
@@ -58,6 +59,7 @@
             // 
             // lstMarcas_carga
             // 
+            lstMarcas_carga.DropDownStyle = ComboBoxStyle.DropDownList;
             lstMarcas_carga.FormattingEnabled = true;
             lstMarcas_carga.Items.AddRange(new object[] { "Peugeot", "Fiat", "Renault" });
             lstMarcas_carga.Location = new Point(30, 37);
@@ -67,6 +69,7 @@
             // 
             // lstOrigen_carga
             // 
+            lstOrigen_carga.DropDownStyle = ComboBoxStyle.DropDownList;
             lstOrigen_carga.FormattingEnabled = true;
             lstOrigen_carga.Items.AddRange(new object[] { "Nacional", "Importado" });
             lstOrigen_carga.Location = new Point(198, 37);
@@ -101,6 +104,7 @@
             // 
             // mrcCarga
             // 
+            mrcCarga.Controls.Add(btnCancelar);
             mrcCarga.Controls.Add(lblDescripcion);
             mrcCarga.Controls.Add(lblPrecio);
             mrcCarga.Controls.Add(lblRepuesto);
@@ -118,6 +122,16 @@
             mrcCarga.TabIndex = 5;
             mrcCarga.TabStop = false;
             mrcCarga.Text = "Ingresar datos";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(186, 218);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(162, 29);
+            btnCancelar.TabIndex = 11;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // lblDescripcion
             // 
@@ -150,7 +164,7 @@
             // 
             btnCarga.Location = new Point(28, 218);
             btnCarga.Name = "btnCarga";
-            btnCarga.Size = new Size(320, 29);
+            btnCarga.Size = new Size(152, 29);
             btnCarga.TabIndex = 5;
             btnCarga.Text = "Cargar";
             btnCarga.UseVisualStyleBackColor = true;
@@ -261,6 +275,7 @@
             // 
             // lstMarca_consulta
             // 
+            lstMarca_consulta.DropDownStyle = ComboBoxStyle.DropDownList;
             lstMarca_consulta.FormattingEnabled = true;
             lstMarca_consulta.Items.AddRange(new object[] { "Peugeot", "Fiat", "Renault" });
             lstMarca_consulta.Location = new Point(19, 37);
@@ -315,5 +330,6 @@
         private Label lblOrigen_consulta;
         private ListBox lstRepuestos_consulta;
         private Label lblRepuestosFitlrados;
+        private Button btnCancelar;
     }
 }
