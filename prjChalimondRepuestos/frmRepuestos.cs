@@ -51,16 +51,16 @@ namespace prjChalimondRepuestos
 
         private void CargarRepuesto()
         {
-            Repuesto repuesto = new Repuesto();
-            repuesto.marca = lstMarcas_carga.Text;
-            repuesto.origen = lstOrigen_carga.Text;
-            repuesto.numeroRepuesto = (int)numRepuesto_carga.Value;
-            repuesto.descripcion = txtDesc_carga.Text;
-            repuesto.precio = numPrecio_carga.Value;
+            Repuesto objRepuesto = new Repuesto();
+            objRepuesto.marca = lstMarcas_carga.Text;
+            objRepuesto.origen = lstOrigen_carga.Text;
+            objRepuesto.numeroRepuesto = (int)numRepuesto_carga.Value;
+            objRepuesto.descripcion = txtDesc_carga.Text;
+            objRepuesto.precio = numPrecio_carga.Value;
 
-            if (!ValidarCarga(repuesto)) return;
+            if (!ValidarCarga(objRepuesto)) return;
 
-            repuestos[contadorRepuestos] = repuesto;
+            repuestos[contadorRepuestos] = objRepuesto;
             contadorRepuestos++;
 
             MessageBox.Show("Repuesto cargado exitosamente.", "Operacion exitosa");
@@ -69,19 +69,19 @@ namespace prjChalimondRepuestos
         }
 
 
-        private bool ValidarCarga(Repuesto repuesto)
+        private bool ValidarCarga(Repuesto objRepuesto)
         {
 
             if (contadorRepuestos >= repuestos.Length)
             {
-                MessageBox.Show("No se pueden cargar más de 100 repuestos");
+                MessageBox.Show("No se pueden cargar más de 100 repuestos", "Advertencia");
                 return false;
             }
             for (int i = 0; i < contadorRepuestos; i++)
             {
-                if (repuestos[i].numeroRepuesto == repuesto.numeroRepuesto)
+                if (repuestos[i].numeroRepuesto == objRepuesto.numeroRepuesto)
                 {
-                    MessageBox.Show("El numero de repuesto ya existe");
+                    MessageBox.Show("El numero de repuesto ya existe", "Advertencia");
                     return false;
                 }
             }
