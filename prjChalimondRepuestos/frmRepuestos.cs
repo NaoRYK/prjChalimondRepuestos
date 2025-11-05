@@ -121,7 +121,7 @@ namespace prjChalimondRepuestos
 
         private void ConsultarRepuesto()
         {
-            
+            Limpiar();
             lstRepuestos_consulta.Items.Clear();
 
 
