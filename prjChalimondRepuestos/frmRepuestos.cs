@@ -63,7 +63,7 @@ namespace prjChalimondRepuestos
             repuestos[contadorRepuestos] = objRepuesto;
             contadorRepuestos++;
 
-            MessageBox.Show("Repuesto cargado exitosamente.", "Operacion exitosa");
+            MessageBox.Show("Repuesto cargado exitosamente.", "Operacion exitosa",  MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             Limpiar();
         }
@@ -74,14 +74,14 @@ namespace prjChalimondRepuestos
 
             if (contadorRepuestos >= repuestos.Length)
             {
-                MessageBox.Show("No se pueden cargar más de 100 repuestos", "Advertencia");
+                MessageBox.Show("No se pueden cargar más de 100 repuestos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             for (int i = 0; i < contadorRepuestos; i++)
             {
                 if (repuestos[i].numeroRepuesto == objRepuesto.numeroRepuesto)
                 {
-                    MessageBox.Show("El numero de repuesto ya existe", "Advertencia");
+                    MessageBox.Show("El numero de repuesto ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
